@@ -282,56 +282,35 @@ Viewpoint {
   orientation 0.5770 0.5775 0.5775 2.0935
 }
 
-DEF springJoint Humanoid {
-  version "1.1"
-  
+DEF robot1 Humanoid {
   humanoidBody [
-    DEF ROOT Joint {
-      jointType "free"
-      translation 0 0 0.0
+    DEF WAIST Joint {
+      jointType "free"	
+      translation 0 0 0
       children [
-        DEF ROOT_LINK Segment {
-          centerOfMass  0 0 0
-          mass    1.0
+        DEF BODY Segment {
+	  mass 1.0
           momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
           children [
-            Inline {
-              url "box1.wrl"
+            Shape {
+              appearance Appearance {
+                material Material {
+                  diffuseColor   1.0 0.0 0.0
+                }
+              }
+              geometry Box { size 0.2 0.8 0.1 }
             }
           ]
         }
-
-        DEF SPRING_JOINT Joint {
-	        translation     0 0 0.1
-          jointType "slide"
-	        jointAxis 0 0 1
-          children [
-            DEF LINK1 Segment {
-              centerOfMass  0 0 0.045
-              mass    1.0
-              momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
-          children [
-            Inline {
-              url "box2.wrl"
-            }
-          ]
-            }  #LINK1
-          ]
-        }  # J0
       ]
-    } # ROOT
+    }
   ]
-
-  # List up all the joints' name you use
   joints [
-    USE ROOT,
-    USE SPRING_JOINT
+    USE WAIST
   ]
-
-  # List up all the segments' name you use
+  name "robot1"
   segments [
-    USE ROOT_LINK,
-    USE LINK1
+    USE BODY
   ]
 }
 
