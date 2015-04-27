@@ -301,21 +301,40 @@ DEF springJoint Humanoid {
           ]
         }
 
-        DEF SPRING_JOINT Joint {
-	        translation     0 0 0.1
-          jointType "slide"
-	        jointAxis 0 0 1
-          children [
-            DEF LINK1 Segment {
-              centerOfMass  0 0 0.045
-              mass    1.0
-              momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
-          children [
-            Inline {
-              url "box2.wrl"
-            }
-          ]
-            }  #LINK1
+			DEF SPRING_JOINT Joint {
+				translation     0 0 0.1
+			  jointType "slide"
+				jointAxis 0 0 1
+			  children [
+			    DEF LINK1 Segment {
+			      centerOfMass  0 0 0.045
+			      mass    1.0
+			      momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
+			  children [
+			    Inline {
+			      url "box2.wrl"
+			    }
+			  ]
+			    }  #LINK1
+
+					DEF SPRING_JOINT_BIS Joint {
+						translation     0 0 0.1
+					  jointType "slide"
+						jointAxis 0 0 1
+					  children [
+					    DEF LINK2 Segment {
+					      centerOfMass  0 0 0.045
+					      mass    1.0
+					      momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
+					  children [
+					    Inline {
+					      url "box3.wrl"
+					    }
+					  ]
+					    }  #LINK2
+
+
+
           ]
         }  # J0
       ]
@@ -326,12 +345,14 @@ DEF springJoint Humanoid {
   joints [
     USE ROOT,
     USE SPRING_JOINT
+    USE SPRING_JOINT_BIS
   ]
 
   # List up all the segments' name you use
   segments [
     USE ROOT_LINK,
     USE LINK1
+    USE LINK2
   ]
 }
 
