@@ -286,11 +286,11 @@ DEF springJoint Humanoid {
   version "1.1"
   
   humanoidBody [
-    DEF ROOT Joint {
+    DEF ROOT1 Joint {
       jointType "free"
       translation 0 0 0.0
       children [
-        DEF ROOT_LINK Segment {
+        DEF ROOT_LINK1 Segment {
           centerOfMass  0 0 0
           mass    1.0
           momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
@@ -307,7 +307,7 @@ DEF springJoint Humanoid {
         }
 
         DEF SPRING_JOINT_1 Joint {
-	        translation     0 0 0.1
+	        translation     0 0 0.065
           jointType "slide"
 	        jointAxis 0 0 1
           children [
@@ -315,15 +315,18 @@ DEF springJoint Humanoid {
               centerOfMass  0 0 0.045
               mass    1.0
               momentsOfInertia [ 1 0 0 0 1 0 0 0 1 ]
-          children [
-            Shape {
-              appearance Appearance {
-                material Material {
-                  diffuseColor   1.0 0.0 0.0
+              children [
+                Transform {
+                  translation   0 0 0.05
+                  children      Shape {
+                    appearance  Appearance {
+                      material  Material {
+                        diffuseColor   0.0 1.0 0.0
+                      }
+                    }
+                    geometry Box { size 0.2 0.8 0.12 }
+                  }
                 }
-              }
-              geometry Box { size 0.2 0.8 0.1 }
-            }
           ]
             }  #LINK1
           ]
@@ -334,13 +337,13 @@ DEF springJoint Humanoid {
 
   # List up all the joints' name you use
   joints [
-    USE ROOT,
+    USE ROOT1,
     USE SPRING_JOINT_1
   ]
 
   # List up all the segments' name you use
   segments [
-    USE ROOT_LINK,
+    USE ROOT_LINK1,
     USE LINK1
   ]
 }

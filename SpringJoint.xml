@@ -14,12 +14,12 @@
             <property name="SPRING_JOINT_1.mode" value="Torque"/>
             <property name="J0.angle" value="0.0 "/>
             <property name="markRadius" value="0.05 "/>
-            <property name="ROOT.rotation" value="0.0 1.0 0.0 0.0 "/>
-            <property name="ROOT.mode" value="Torque"/>
+            <property name="ROOT1.rotation" value="0.0 1.0 0.0 0.0 "/>
+            <property name="ROOT1.mode" value="Torque"/>
             <property name="J0.mode" value="Torque"/>
-            <property name="ROOT.angularVelocity" value="0.0 0.0 0.0 "/>
-            <property name="ROOT.translation" value="0.0 0.0 0.1 "/>
-            <property name="ROOT.velocity" value="0.0 0.0 0.0 "/>
+            <property name="ROOT1.angularVelocity" value="0.0 0.0 0.0 "/>
+            <property name="ROOT1.translation" value="0.0 0.0 0.1 "/>
+            <property name="ROOT1.velocity" value="0.0 0.0 0.0 "/>
             <property name="isRobot" value="true"/>
             <property name="SPRING_JOINT_1.angle" value="0.0 "/>
         </item>
@@ -27,12 +27,12 @@
             <property name="SPRING_JOINT_2.mode" value="Torque"/>
             <property name="J0.angle" value="0.0 "/>
             <property name="markRadius" value="0.05 "/>
-            <property name="ROOT.rotation" value="0.0 1.0 0.0 0.0 "/>
-            <property name="ROOT.mode" value="Torque"/>
+            <property name="ROOT2.rotation" value="0.0 1.0 0.0 0.0 "/>
+            <property name="ROOT2.mode" value="Torque"/>
             <property name="J0.mode" value="Torque"/>
-            <property name="ROOT.angularVelocity" value="0.0 0.0 0.0 "/>
-            <property name="ROOT.translation" value="1.0 0.0 0.1 "/>
-            <property name="ROOT.velocity" value="0.0 0.0 0.0 "/>
+            <property name="ROOT2.angularVelocity" value="0.0 0.0 0.0 "/>
+            <property name="ROOT2.translation" value="1.0 0.0 0.1 "/>
+            <property name="ROOT2.velocity" value="0.0 0.0 0.0 "/>
             <property name="isRobot" value="true"/>
             <property name="SPRING_JOINT_2.angle" value="0.0 "/>
         </item>
@@ -44,7 +44,10 @@
             <property name="markRadius" value="0.05 "/>
             <property name="WAIST.angularVelocity" value="0.0 0.0 0.0 "/>
         </item>
-        <item class="com.generalrobotix.ui.item.GrxWorldStateItem" name="springJoint" select="true">
+        <item class="com.generalrobotix.ui.item.GrxWorldStateItem" name="springJoint_1" select="true">
+            <property name="logTimeStep" value="0.0010 "/>
+        </item>
+        <item class="com.generalrobotix.ui.item.GrxWorldStateItem" name="springJoint_2" select="true">
             <property name="logTimeStep" value="0.0010 "/>
         </item>
         <item class="com.generalrobotix.ui.item.GrxCollisionPairItem" name="CP#floor_#robot1_" select="true">
