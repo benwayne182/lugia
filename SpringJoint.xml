@@ -23,6 +23,19 @@
             <property name="isRobot" value="true"/>
             <property name="SPRING_JOINT.angle" value="0.0 "/>
         </item>
+        <item class="com.generalrobotix.ui.item.GrxModelItem" name="springJoint2" select="true" url="$(CURRENT_DIR)/springJoint2.wrl">
+            <property name="SPRING_JOINT2.mode" value="Torque"/>
+            <property name="J0.angle" value="0.0 "/>
+            <property name="markRadius" value="0.05 "/>
+            <property name="ROOT2.rotation" value="0.0 1.0 0.0 0.0 "/>
+            <property name="ROOT2.mode" value="Torque"/>
+            <property name="J0.mode" value="Torque"/>
+            <property name="ROOT2.angularVelocity" value="0.0 0.0 0.0 "/>
+            <property name="ROOT2.translation" value="1.0 0.0 0.1 "/>
+            <property name="ROOT2.velocity" value="0.0 0.0 0.0 "/>
+            <property name="isRobot" value="true"/>
+            <property name="SPRING_JOINT2.angle" value="0.0 "/>
+        </item>
         <item class="com.generalrobotix.ui.item.GrxModelItem" name="floor" select="true" url="$(CURRENT_DIR)/floor.wrl">
             <property name="isRobot" value="true"/>
             <property name="WAIST.rotation" value="0.0 1.0 0.0 0.0 "/>
@@ -42,6 +55,18 @@
             <property name="jointName1" value=""/>
             <property name="damperConstant" value="0 0 0 0 0 0"/>
             <property name="objectName2" value="springJoint"/>
+            <property name="objectName1" value="floor"/>
+            <property name="springDamperModel" value="false"/>
+            <property name="staticFriction" value="0.5"/>
+        </item>
+        <item class="com.generalrobotix.ui.item.GrxCollisionPairItem" name="CP#floor_#springJoint2_" select="true">
+            <property name="springConstant" value="0 0 0 0 0 0"/>
+            <property name="slidingFriction" value="0.5"/>
+            <property name="cullingThresh" value="0.01"/>
+            <property name="jointName2" value=""/>
+            <property name="jointName1" value=""/>
+            <property name="damperConstant" value="0 0 0 0 0 0"/>
+            <property name="objectName2" value="springJoint2"/>
             <property name="objectName1" value="floor"/>
             <property name="springDamperModel" value="false"/>
             <property name="staticFriction" value="0.5"/>
